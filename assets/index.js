@@ -2,7 +2,7 @@ let checkResponse;
 
 window.addEventListener("load", () => {
   checkResponse = (() => {
-    let correct_answers = ["1", "1", "1"]; /* "cranc", "violí", "Iván" */
+    let correct_answers = ["cranc", "violi", "ivan"];
     let actualRiddle = 0;
     let check_answer = function (value) {
       if (correct_answers[actualRiddle] == value) return true;
@@ -30,6 +30,12 @@ window.addEventListener("load", () => {
 function checkAnswer() {
   let input = document.querySelector('input[type="text"');
   let answer = input.value;
+
+  // make the answer lowecase and remove accents
+  answer = answer.toLowerCase();
+  answer = answer.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+  // check if the answer is correct
   if (checkResponse.check(answer)) {
     //Show the new riddle
     let riddles = document.querySelector(".riddles");
@@ -45,6 +51,7 @@ function checkAnswer() {
     );
     input.value = "";
 
+    //Check if it's the last riddle, if it is, show the final message and the final animation
     if (checkResponse.finalRiddle()) {
       const jsConfetti = new JSConfetti();
 
@@ -70,7 +77,7 @@ function checkAnswer() {
       document.querySelector(".card").classList.add("final");
     }
   } else {
-    alert("Error!");
+    alert("Solució incorrecta! Torna-ho a intentar");
   }
 }
 

@@ -207,4 +207,7 @@ main {
     .popup > img {
         width: calc( 100% - 100px );
     }
+    .card {
+        width: 75%;
+    }
 }
