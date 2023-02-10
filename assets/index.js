@@ -31,9 +31,10 @@ function checkAnswer() {
   let input = document.querySelector('input[type="text"');
   let answer = input.value;
 
-  // make the answer lowecase and remove accents
+  // make the answer lowecase, remove accents and trim the spaces
   answer = answer.toLowerCase();
   answer = answer.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  answer = answer.trim();
 
   // check if the answer is correct
   if (checkResponse.check(answer)) {
@@ -90,8 +91,8 @@ function showImage(element) {
   img.src = element.src;
   img.id = "popupImage";
 
-  let description = (document.querySelector(".imgDescription").innerHTML =
-    element.dataset.description);
+  document.querySelector(".imgDescription").innerHTML =
+    element.dataset.description;
 
   popup.appendChild(img);
 }
