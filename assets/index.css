@@ -15,21 +15,23 @@ body {
     grid-template-rows: 300px calc(100% - 400px);
     color: #fff;
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
-	animation: gradient 25s ease infinite;
+    background-size: 400% 400%;
+    animation: gradient 25s ease infinite;
     position: relative;
 }
 
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 
@@ -78,12 +80,12 @@ main {
     display: grid;
     grid-template-rows: 60% 10% 30%;
 
-    background: rgba( 255, 255, 255, 0.6 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 11px );
-    -webkit-backdrop-filter: blur( 11px );
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(11px);
+    -webkit-backdrop-filter: blur(11px);
     border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .card.final {
@@ -92,26 +94,26 @@ main {
     align-items: center;
 }
 
-.card > div.riddles {
+.card>div.riddles {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 
-.card > div.riddles > div {
+.card>div.riddles>div {
     display: none;
 }
 
-.card > div.riddles > div.active {
+.card>div.riddles>div.active {
     display: block;
     margin-bottom: 20px;
 }
 
-.card > div.riddles > div.active > p {
+.card>div.riddles>div.active>p {
     font-size: 32px;
 }
 
-.card > div.riddles > div.active > span > i {
+.card>div.riddles>div.active>span>i {
     color: #ffffffe7;
 }
 
@@ -123,7 +125,7 @@ main {
     text-align: center;
 }
 
-.card .submitButton > button {
+.card .submitButton>button {
     background-color: #3a6df0;
     border: none;
     padding: 8px 26px;
@@ -172,8 +174,8 @@ main {
     z-index: -1;
 }
 
-.popup > .imgDescription,
-.popup > .close {
+.popup>.imgDescription,
+.popup>.close {
     display: none;
 }
 
@@ -182,7 +184,7 @@ main {
     opacity: 1;
 }
 
-.popup.show > .close {
+.popup.show>.close {
     display: block;
     cursor: pointer;
     position: absolute;
@@ -191,7 +193,7 @@ main {
     width: auto;
 }
 
-.popup.show > .imgDescription {
+.popup.show>.imgDescription {
     display: block;
     position: absolute;
     color: #fff;
@@ -199,14 +201,15 @@ main {
     width: 100%;
 }
 
-.popup > img {
-    width: 750px;
+.popup>img {
+    width: 500px;
 }
 
 @media screen and (max-width: 768px) {
-    .popup > img {
-        width: calc( 100% - 100px );
+    .popup>img {
+        width: calc(100% - 100px);
     }
+
     .card {
         width: 75%;
     }
