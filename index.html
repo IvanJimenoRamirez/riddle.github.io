@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endevina</title>
+    <link rel="stylesheet" href="assets/index.css">
+</head>
+<body>
+    <div class="popup">
+        <div class="imgDescription"></div>
+        <img class="close" onclick="closePopup()" src="assets/close.png" alt="close">
+    </div>
+    <nav>
+        <div>
+            Pistes trobades fins ara: <span id="n_images">0</span>
+        </div>
+        <div class="imageWrapper">
+            <div class="">
+                <img onclick="showImage(this)" src="assets/DALL·E 2023-02-09 21.35.27 - cancer zodiac sign (crab), digital art.png" alt="Cancer" data-description="Cancer zodiac sign (crab), digital art">
+            </div>
+            <div class="">
+                <img onclick="showImage(this)" src="assets/DALL·E 2023-02-09 21.37.13 - violin, digital art.png" alt="Violin" data-description="Violin, digital art">
+            </div>
+            <div class="">
+                <img onclick="showImage(this)" src="assets/DALL·E 2023-02-10 00.53.53 - Put a theater in the background with some shrimps dancing samba, comic art.png" alt="Gamba" data-description="Theater in the background with some shrimps dancing samba, comic art">
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="card">
+            <div class="riddles">
+                <div class="active">
+                    <p><b>Endevinalla 1:</b></p>
+                    <span><i>"Dues pinces té, i cap enrere va; de mar o de riu a l'aigua viu."</i></span>
+                </div>
+                <div class="">
+                    <p><b>Endevinalla 2:</b></p>
+                    <span><i>"Sóc de fusta, tinc un arc i no fletxa."</i></span>
+                </div>
+                <div class="">
+                    <p><b>Endevinalla 3:</b></p>
+                    <span><i>"Qui soc?."</i></span>
+                </div>
+                <div class="final">
+                    <p><b>Enhorabona, ho has aconseguit!</b></p>
+                </div>
+            </div>
+            <div>
+                <input type="text" placeholder="La teva resposta!">
+            </div>
+            <div class="submitButton">
+                <button type="button" onclick="checkAnswer()"> Comprovar </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+</body>
+</html>

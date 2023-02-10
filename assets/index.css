@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    --main_color: #202126;
+}
+
+body {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 26px;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 300px calc(100% - 400px);
+    color: #fff;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 25s ease infinite;
+    position: relative;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+/** NAVBAR **/
+
+nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.imageWrapper {
+    display: flex;
+    justify-content: center;
+    min-height: 95px;
+}
+
+.imageWrapper div {
+    display: none;
+}
+
+.imageWrapper div.show {
+    display: block;
+}
+
+.imageWrapper div img {
+    width: 75px;
+    margin: 5px;
+}
+
+/** MAIN CONTENT **/
+
+main {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card {
+    width: 50%;
+    height: 500px;
+    border-radius: 20px;
+    display: grid;
+    grid-template-rows: 60% 10% 30%;
+
+    background: rgba( 255, 255, 255, 0.6 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 11px );
+    -webkit-backdrop-filter: blur( 11px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.card.final {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card > div.riddles {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.card > div.riddles > div {
+    display: none;
+}
+
+.card > div.riddles > div.active {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.card > div.riddles > div.active > p {
+    font-size: 32px;
+}
+
+.card > div.riddles > div.active > span > i {
+    color: #ffffffe7;
+}
+
+.card .submitButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+}
+
+.card .submitButton > button {
+    background-color: #3a6df0;
+    border: none;
+    padding: 8px 26px;
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    white-space: nowrap;
+    padding: 6px 24px;
+    font-size: 18px;
+}
+
+.card input {
+    all: unset;
+    width: 40%;
+    height: 30px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.862);
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 0 20px 0 20px;
+    box-shadow: 0 0 0 2px rgb(134 140 160 / 2%);
+    color: #000000;
+    border: 1px solid rgba(255, 255, 255, 0.862);
+}
+
+.card input:focus {
+    border: 1px solid #000;
+}
+
+/** POPUP **/
+.popup {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background-color: #252525e6;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease-in;
+    z-index: -1;
+}
+
+.popup > .imgDescription,
+.popup > .close {
+    display: none;
+}
+
+.popup.show {
+    z-index: 999;
+    opacity: 1;
+}
+
+.popup.show > .close {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: auto;
+}
+
+.popup.show > .imgDescription {
+    display: block;
+    position: absolute;
+    color: #fff;
+    top: 100px;
+    width: 100%;
+}
+
+.popup > img {
+    width: 750px;
+}
+
+@media screen and (max-width: 768px) {
+    .popup > img {
+        width: calc( 100% - 100px );
+    }
+}
