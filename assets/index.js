@@ -75,7 +75,6 @@ function checkAnswer() {
 }
 
 function showImage(element) {
-  console.log("Image clicked!");
   let popup = document.querySelector(".popup");
 
   popup.classList.add("show");
